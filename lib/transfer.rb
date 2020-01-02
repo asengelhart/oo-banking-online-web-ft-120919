@@ -16,7 +16,7 @@ class Transfer
   
   def execute_transaction
     if self.status == "pending" 
-      if self.sender.balance < amount || self.sender.status != "open" || self.receiver.status != open
+      if self.sender.balance < amount || self.sender.status != "open" || self.receiver.status != "open"
         return "Transaction rejected. Please check your account balance."
       else 
         self.sender.balance -= amount 
