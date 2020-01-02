@@ -1,3 +1,4 @@
+require 'pry'
 class Transfer
   attr_accessor :status 
   attr_reader :sender, :receiver, :amount 
@@ -15,6 +16,7 @@ class Transfer
   
   def execute_transaction
     if status == "pending" 
+      binding.pry 
       if sender.balance < amount
         return "Transaction rejected. Please check your account balance."
       else 
